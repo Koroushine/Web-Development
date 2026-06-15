@@ -1,0 +1,1 @@
+Develop an HTML page to present the University Infrastructure, using <div> elements for layout and applying structured CSS for styling and proper content organization.
