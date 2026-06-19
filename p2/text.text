@@ -1,0 +1,4 @@
+Create an online internship registration form for XYZ Technologies using JavaScript validation. 
+a. The form must collect : Full Name, Date of Birth (dropdown), Gender (radio buttons>, Email, Address, Latest Qualification, and Percentage of Marks. 
+b. Validation Rules: If the highest qualification is MCA/M.Tech with Specializationin AI/ML and the marks are above 70%, display: "Mr./Ms. [Name], your registration has been successfully accepted." 
+c. Otherwise, display: "Mr./Ms. [Name], you do not meet the eligibility criteria."

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XYZ Technologies Internship Registration</title>
+</head>
+<body>
+
+    <h1>XYZ Technologies Internship Registration Form</h1>
+
+    <form onsubmit="validateForm(event)">
+
+        <label>Full Name:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label>Date of Birth:</label><br>
+
+        <select id="day">
+            <option>Day</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
+
+        <select id="month">
+            <option>Month</option>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+
+        <select id="year">
+            <option>Year</option>
+            <option>2000</option>
+            <option>2001</option>
+            <option>2002</option>
+            <option>2003</option>
+            <option>2004</option>
+            <option>2005</option>
+        </select>
+
+        <br><br>
+
+        <label>Gender:</label><br>
+
+        <input type="radio" name="gender" value="Male" required>
+        <label>Male</label>
+
+        <input type="radio" name="gender" value="Female">
+        <label>Female</label>
+
+        <br><br>
+
+        <label>Email:</label><br>
+        <input type="email" id="email" required><br><br>
+
+        <label>Address:</label><br>
+        <textarea id="address" rows="4" cols="30"></textarea><br><br>
+
+        <label>Latest Qualification:</label><br>
+        <select id="qualification">
+            <option>BCA</option>
+            <option>MCA</option>
+            <option>B.Tech</option>
+            <option>M.Tech</option>
+        </select>
+
+        <br><br>
+
+        <label>Specialization:</label><br>
+        <select id="specialization">
+            <option>AI/ML</option>
+            <option>Data Science</option>
+            <option>Cyber Security</option>
+            <option>Cloud Computing</option>
+        </select>
+
+        <br><br>
+
+        <label>Percentage of Marks:</label><br>
+        <input type="number" id="marks" required><br><br>
+
+        <input type="submit" value="Register">
+
+    </form>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function validateForm(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let qualification = document.getElementById("qualification").value;
+            let specialization = document.getElementById("specialization").value;
+            let marks = parseFloat(document.getElementById("marks").value);
+
+            let gender = document.querySelector('input[name="gender"]:checked').value;
+
+            let title = (gender === "Male") ? "Mr." : "Ms.";
+
+            if (
+                (qualification === "MCA" || qualification === "M.Tech") &&
+                specialization === "AI/ML" &&
+                marks > 70
+            ) {
+                document.getElementById("result").innerHTML =
+                    title + " " + name +
+                    ", your registration has been successfully accepted.";
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                    title + " " + name +
+                    ", you do not meet the eligibility criteria.";
+            }
+        }
+    </script>
+
+</body>
+</html>
