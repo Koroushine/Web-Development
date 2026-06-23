@@ -2,154 +2,55 @@
 <html>
 <head>
     <title>XYZ Technologies Internship Registration</title>
+    <link rel ="stylesheet" href="style.css">
 </head>
 <body>
-
-    <h1>XYZ Technologies Internship Registration Form</h1>
-    <div class="section">
-    <form onsubmit="validateForm(event)">
-
-        <label>Full Name:</label><br>
-        <input type="text" id="name" required><br><br>
-
-        <label>Date of Birth:</label><br>
-
-        <select id="Date">
-            <option>Day</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-            <option>20</option>
-            <option>21</option>
-            <option>22</option>
-            <option>23</option>
-            <option>24</option>
-            <option>25</option>
-            <option>26</option>
-            <option>27</option>
-            <option>28</option>
-            <option>29</option>
-            <option>30</option>
-        </select>
-
-        <select id="month">
-            <option>Month</option>
-            <option>January</option>
-            <option>February</option>
-            <option>March</option>
-            <option>April</option>
-            <option>May</option>
-            <option>June</option>
-            <option>July</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-            <option>November</option>
-            <option>December</option>
-        </select>
-
-        <select id="year">
-            <option>Year</option>
-            <option>2000</option>
-            <option>2001</option>
-            <option>2002</option>
-            <option>2003</option>
-            <option>2004</option>
-            <option>2005</option>
-        </select>
-
-        <br><br>
-
-        <label>Gender:</label><br>
-
-        <input type="radio" name="gender" value="Male" required>
-        <label>Male</label>
-
-        <input type="radio" name="gender" value="Female">
-        <label>Female</label>
-
-        <br><br>
-
-        <label>Email:</label><br>
-        <input type="email" id="email" required><br><br>
-
-        <label>Address:</label><br>
-        <textarea id="address" rows="4" cols="30"></textarea><br><br>
-
-        <label>Latest Qualification:</label><br>
-        <select id="qualification">
-            <option>BCA</option>
-            <option>MCA</option>
-            <option>B.Tech</option>
-            <option>M.Tech</option>
-        </select>
-
-        <br><br>
-
-        <label>Specialization:</label><br>
-        <select id="specialization">
-            <option>AI/ML</option>
-            <option>Data Science</option>
-            <option>Cyber Security</option>
-            <option>Cloud Computing</option>
-        </select>
-
-        <br><br>
-
-        <label>Percentage of Marks:</label><br>
-        <input type="number" id="marks" required><br><br>
-
-        <input type="submit" value="Register">
-
-    </form>
+    <div>
+        <h1>Intership Registration Form</h1>
     </div>
-    <h3 id="result"></h3>
 
-    <script>
-        function validateForm(event) {
+    <form>
 
-            event.preventDefault();
+        <div>
+            <label for="fname">First name : </label>
+            <input type="text" id="fname" name="first_name" placeholder="Tom">
+        </div>
 
-            let name = document.getElementById("name").value;
-            let qualification = document.getElementById("qualification").value;
-            let specialization = document.getElementById("specialization").value;
-            let marks = parseFloat(document.getElementById("marks").value);
+        <br>
 
-            let gender = document.querySelector('input[name="gender"]:checked').value;
+        <div>
+            <label for="lname">Last name : </label>
+            <input type="text" id="lname" name="last_name" placeholder="Hollen">
+        </div>
 
-            let title = (gender === "Male") ? "Mr." : "Ms.";
+        <br>
 
-            if (
-                (qualification === "MCA" || qualification === "M.Tech") &&
-                specialization === "AI/ML" &&
-                marks > 70
-            ) {
-                document.getElementById("result").innerHTML =
-                    title + " " + name +
-                    ", your registration has been successfully accepted.";
-            }
-            else {
-                document.getElementById("result").innerHTML =
-                    title + " " + name +
-                    ", you do not meet the eligibility criteria.";
-            }
-        }
-    </script>
+        <div>
+            <label for="dob">DOB :</label>
+            <input type="date" id="dob" name="dateofbirth">
+        </div>
+
+        <br>
+        
+        <div>
+            <label for="gender" >Gender :</label>
+
+            <label for="Male">Male</label>
+            <input id="Male" name="gender" type="radio" value="Male">
+
+            <label for="Female">Female</label>
+            <input id="Female" name="gender" type="radio" value="Female">
+            
+        </div>
+        <br>
+        <div>
+            <input type="reset">
+        </div>
+        <br>
+        <div>
+            <input type="submit"
+        </div>
+    </form>
+
 </body>
 </html>
